@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11110f">
+    <title>INTERNSHIP — 不用准备好，先去看看</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="hero-nav" aria-label="主导航">
+        <a class="brand" href="#top">INTERNSHIP</a>
+        <div class="hero-nav-actions">
+          <a href="#jobs">浏览岗位</a>
+          <a id="accountLink" href="/auth.html">登录 / 注册</a>
+          <button id="logoutButton" type="button" hidden>退出登录</button>
+          <button id="openFiltersButton" type="button" aria-expanded="false" aria-controls="filterDrawer">
+            筛选岗位
+          </button>
+        </div>
+      </nav>
+
+      <div class="hero-copy">
+        <p id="heroMeta" class="hero-meta">正在读取岗位...</p>
+        <h1 aria-label="不用准备好，先去看看。">
+          <span>不用准备好，</span>
+          <span>先去看看。</span>
+        </h1>
+        <div class="hero-footer">
+          <p>给第一次找实习的你。真实岗位，慢慢挑。</p>
+          <a class="text-link" href="#jobs">开始找实习 <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="jobs">
+      <section class="section-intro" aria-labelledby="jobsHeading">
+        <p class="eyebrow">FIRST STEP / 01</p>
+        <h2 id="jobsHeading">先看见可能，<br>再决定去哪。</h2>
+        <p>不用假装经验丰富。按城市、方向和兴趣，把适合现在的机会挑出来。</p>
+      </section>
+
+      <section class="job-browser" aria-label="岗位浏览">
+        <header class="job-browser-header">
+          <div>
+            <p class="eyebrow">OPPORTUNITY REEL / 02</p>
+            <h2>每一份岗位，<br>都是一段新剧情。</h2>
+          </div>
+          <div class="browser-header-meta">
+            <p id="resultSummary">正在读取岗位...</p>
+            <button id="inlineFiltersButton" type="button" aria-expanded="false" aria-controls="filterDrawer">
+              搜索与筛选 ↗
+            </button>
+          </div>
+        </header>
+
+        <div class="job-browser-grid">
+          <div class="job-index">
+            <div class="index-header">
+              <p>SELECT A STORY</p>
+              <p>匹配分</p>
+            </div>
+            <div id="jobList" class="job-list" role="list"></div>
+            <p id="emptyState" class="empty-state" hidden>这组条件暂时没有岗位。</p>
+          </div>
+          <article id="jobStage" class="job-stage" aria-live="polite">
+            <p class="stage-loading">正在准备第一份机会...</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>INTERNSHIP</p>
+      <p>从校园，到第一次出发。</p>
+      <a href="#top">回到顶部 ↑</a>
+    </footer>
+
+    <aside id="filterDrawer" class="filter-drawer" aria-labelledby="filterTitle" hidden>
+      <div class="drawer-header">
+        <div>
+          <p class="eyebrow">FIND YOUR WAY</p>
+          <h2 id="filterTitle">把范围缩小一点。</h2>
+        </div>
+        <button id="closeFiltersButton" class="icon-button" type="button" aria-label="关闭筛选">×</button>
+      </div>
+
+      <div class="filter-fields">
+        <label class="search-field">
+          <span>你想找什么？</span>
+          <input id="searchInput" type="search" placeholder="岗位、公司、城市、技能">
+        </label>
+        <label>
+          <span>城市</span>
+          <select id="cityFilter"></select>
+        </label>
+        <label>
+          <span>来源</span>
+          <select id="sourceFilter" disabled aria-describedby="protectedFilterHint"></select>
+        </label>
+        <label>
+          <span>公司</span>
+          <select id="companyFilter"></select>
+        </label>
+        <label>
+          <span>标签</span>
+          <select id="tagFilter" disabled aria-describedby="protectedFilterHint"></select>
+        </label>
+        <p id="protectedFilterHint" class="protected-filter-hint">来源、标签与匹配信息会在登录后的完整岗位中展示。</p>
+      </div>
+
+      <div class="drawer-footer">
+        <p id="drawerResultSummary">0 个结果</p>
+        <div>
+          <button id="sortScoreButton" type="button" aria-pressed="false">优先看高匹配</button>
+          <button id="clearFiltersButton" type="button">清除条件</button>
+        </div>
+      </div>
+    </aside>
+    <button id="drawerBackdrop" class="drawer-backdrop" type="button" aria-label="关闭筛选" hidden></button>
+
+    <section id="detailDialog" class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detailTitle" hidden>
+      <div class="detail-bar">
+        <p>JOB / FULL STORY</p>
+        <button id="closeDetailButton" class="icon-button" type="button" aria-label="关闭岗位详情">×</button>
+      </div>
+      <div id="detailContent" class="detail-content"></div>
+    </section>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

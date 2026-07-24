@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11110f">
+    <title>登录或注册 — INTERNSHIP</title>
+    <link rel="stylesheet" href="/auth.css">
+  </head>
+  <body>
+    <main class="auth-shell">
+      <section class="auth-scene" aria-label="第一次出发">
+        <a class="auth-brand" href="/">INTERNSHIP</a>
+        <div class="scene-index" aria-hidden="true">01 / FIRST STEP</div>
+        <div class="scene-copy">
+          <p>YOUR NEXT STORY</p>
+          <h1>先登录，<br><span>再出发。</span></h1>
+          <p class="scene-note">完整岗位、匹配理由与简历建议，留给认真准备下一步的你。</p>
+        </div>
+      </section>
+
+      <section class="auth-panel" aria-labelledby="authTitle">
+        <div class="auth-panel-top">
+          <a href="/">← 返回岗位</a>
+          <span>INVITE ONLY</span>
+        </div>
+        <div class="auth-card">
+          <p class="eyebrow">MEMBER ACCESS</p>
+          <h2 id="authTitle">继续你的<br><span>岗位故事。</span></h2>
+
+          <div class="auth-tabs" role="tablist" aria-label="账号操作">
+            <button id="loginTab" type="button" role="tab" aria-controls="loginForm" aria-selected="true">登录</button>
+            <button id="registerTab" type="button" role="tab" aria-controls="registerForm" aria-selected="false">邀请码注册</button>
+          </div>
+
+          <form id="loginForm" class="auth-form" novalidate>
+            <label>
+              <span>邮箱</span>
+              <input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" placeholder="you@example.com">
+            </label>
+            <label>
+              <span>密码</span>
+              <input name="password" type="password" autocomplete="current-password" required maxlength="128" placeholder="输入你的密码">
+            </label>
+            <button class="submit-button" type="submit">进入岗位现场 <span aria-hidden="true">↗</span></button>
+          </form>
+
+          <form id="registerForm" class="auth-form" hidden novalidate>
+            <label>
+              <span>怎么称呼你</span>
+              <input name="displayName" type="text" autocomplete="nickname" required maxlength="40" placeholder="例如：小林">
+            </label>
+            <label>
+              <span>邮箱</span>
+              <input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" placeholder="you@example.com">
+            </label>
+            <label>
+              <span>密码（至少 12 位）</span>
+              <input name="password" type="password" autocomplete="new-password" required minlength="12" maxlength="128" placeholder="设置一个长密码">
+            </label>
+            <label>
+              <span>一次性邀请码</span>
+              <input name="inviteCode" type="text" autocomplete="off" required maxlength="50" placeholder="ih_inv_...">
+            </label>
+            <button class="submit-button" type="submit">创建账号并继续 <span aria-hidden="true">↗</span></button>
+          </form>
+
+          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+          <a class="reset-link" href="/reset-password.html">已有重置链接？设置新密码</a>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/auth.js"></script>
+  </body>
+</html>
